@@ -35,7 +35,7 @@ def config():
     """
     cwd                     = os.path.abspath(os.path.curdir)
     zip_dir                 = os.path.join(cwd, "zip")
-    state_file              = os.path.join(zip_dir, "downloaded.txt")
+    state_file              = os.path.join(zip_dir, "state.txt")
     config = {
             "working_dir"   : zip_dir,
             "state_file"    : state_file
@@ -45,22 +45,32 @@ def config():
 # -----------------------------------------------------------------------------
 # Entrypoint
 # -----------------------------------------------------------------------------
-def run(manifest, config, logging_level=logging.INFO):
-    log.configure_logging(logging_level)
+def run(logger, manifest, config):
     start_date      = datetime.date(*manifest['start_date'])
     resource_name   = manifest['name']
     resource_url    = manifest['url']
+    delay           = manifest['download_delay_secs']
     download_dir    = config['working_dir']
     state_file      = config['state_file']
-    # sleep for 5 seconds in between downloads to meet caiso expected use requirements
-    delay = 5
+    # sleep for N seconds in between downloads to meet caiso expected use requirements
+    dates   = xtime.range_pairs(xtime.day_range_to_today(start_date))
+    urls    = list(web.generate_urls(logger, dates, resource_url))
+    log.info(logger, {
+        "name"      : __name__,
+        "method"    : "run",
+        "resource"  : resource_name,
+        "url"       : resource_url,
+        "download_dir": download_dir,
+        "state_file": state_file,
+        "start_date": str(start_date),
+        "urls_count": len(urls),
+        })
     state.update(
             web.download(
+                logger,
                 resource_name,
                 delay,
-                web.generate_urls(
-                    xtime.range_pairs(xtime.day_range_to_today(start_date)),
-                    resource_url),
+                urls,
                 state_file,
                 download_dir),
             state_file
@@ -70,6 +80,18 @@ def run(manifest, config, logging_level=logging.INFO):
 # Main
 # -----------------------------------------------------------------------------
 if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        loglevel = sys.argv[1]
+    else:
+        loglevel = "INFO"
+    log.configure_logging()
+    logger = logging.getLogger(__name__)
+    logger.setLevel(loglevel)
+    log.info(logger, {
+        "name"      : __name__,
+        "method"    : "main",
+        "src"       : "10_down.py"
+        })
     with open('manifest.json', 'r') as json_file:
         m = json.load(json_file)
-        run(m, config())
+        run(logger, m, config())
