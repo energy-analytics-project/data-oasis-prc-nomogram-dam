@@ -2438,3 +2438,12 @@ http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=D
 http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=DAM&nomogram_id=ALL&startdatetime=20190904T07:00-0000&enddatetime=20190905T07:00-0000&version=1
 http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=DAM&nomogram_id=ALL&startdatetime=20190905T07:00-0000&enddatetime=20190906T07:00-0000&version=1
 http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=DAM&nomogram_id=ALL&startdatetime=20190906T07:00-0000&enddatetime=20190907T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=DAM&nomogram_id=ALL&startdatetime=20190907T07:00-0000&enddatetime=20190908T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=DAM&nomogram_id=ALL&startdatetime=20190908T07:00-0000&enddatetime=20190909T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=DAM&nomogram_id=ALL&startdatetime=20190909T07:00-0000&enddatetime=20190910T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=DAM&nomogram_id=ALL&startdatetime=20190910T07:00-0000&enddatetime=20190911T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=DAM&nomogram_id=ALL&startdatetime=20190911T07:00-0000&enddatetime=20190912T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=DAM&nomogram_id=ALL&startdatetime=20190912T07:00-0000&enddatetime=20190913T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=DAM&nomogram_id=ALL&startdatetime=20190913T07:00-0000&enddatetime=20190914T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=DAM&nomogram_id=ALL&startdatetime=20190914T07:00-0000&enddatetime=20190915T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/SingleZip?queryname=PRC_NOMOGRAM&market_run_id=DAM&nomogram_id=ALL&startdatetime=20190915T07:00-0000&enddatetime=20190916T07:00-0000&version=1
